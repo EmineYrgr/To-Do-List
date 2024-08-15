@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görev Listesi</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Görev Listesi</h1>
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="Yeni görev ekleyin...">
+            <button onclick="addTask()"><i class="fa-solid fa-plus"></i> Ekle</button>
+        </div>
+        
+        <div class="trash-icon" onclick="toggleTrashPanel()">
+            <i class="fa-solid fa-trash"></i>        
+        </div>
+        
+        <!-- Tab View -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab('allTasks')">Tüm Görevler</button>
+            <button class="tab-button" onclick="openTab('completedTasks')">Tamamlanan Görevler</button>
+        </div>
+        
+        <div id="allTasks" class="tab-content active">
+            <ul id="taskList"></ul>
+        </div>
+        <div id="completedTasks" class="tab-content">
+            <ul id="completedTasksList"></ul>
+        </div>
+        
+        <div id="trashPanel" style="display: none;">
+            <h3>Silinen Görevler</h3>
+            <ul id="deletedTasksList"></ul>
+            <button id="clearAllButton" onclick="clearAllDeletedTasks()">Tümünü Sil</button>
+        </div>
+        <div class="trash-icon-container">
+            <i id="showTrashPanelButton"></i>
+            <span id="trashCount" class="trash-count">0</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

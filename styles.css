@@ -1,0 +1,335 @@
+/* Genel Stil */
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #e1bee7, #f3e5f5); 
+}
+
+.container {
+    background: #ffffff; 
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 600px; 
+    margin: 20px;
+}
+
+h1, h2 {
+    color: #4a148c;
+    text-align: center;
+}
+
+h1 {
+    font-size: 32px; 
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 26px; 
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Input ve Butonlar */
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ab47bc; 
+    padding-bottom: 10px; 
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 14px;
+    margin-right: 12px;
+    border: 2px solid #ab47bc;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #4a148c;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #8e24aa;
+    outline: none;
+}
+
+button {
+    padding: 14px;
+    background: #ab47bc;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+button:hover {
+    background: #8e24aa;
+    transform: scale(1.05);
+}
+
+/* Liste Stili */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 14px;
+    background: #f3e5f5; 
+    margin-bottom: 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: #4a148c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+li:hover {
+    background: #e1bee7;
+}
+
+li button {
+    background: #e57373;
+    border: none;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 10px; 
+
+}
+li button:first-child {
+    margin-left: 0; 
+}
+li button:hover {
+    background: #ef5350; 
+    transform: scale(1.05);
+}
+
+/* Bildirimler */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.notification.success {
+    background: #7e57c2;
+}
+
+.notification.error {
+    background: #f06292;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notification .icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.notification .close {
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    background: none;
+    border: none;
+    color: #ffffff;
+}
+
+/* Tamamlanan Görevler */
+ul#completedTasks, ul#completedTasksList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul#completedTasks li, ul#completedTasksList li {
+    padding: 14px;
+    background: #e1bee7; 
+    margin-bottom: 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: #4a148c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ul#completedTasks li i {
+    color: #7e57c2; 
+}
+
+/* Tab View Stil */
+#trashPanel {     
+    text-align: center; 
+
+}
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    background: #ffffff; 
+    color: #4a148c; 
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.tab-button.active {
+    background: #e1bee7; 
+    color: #4a148c; 
+}
+
+.tab-button:hover {
+    background: #e1bee7; 
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Çöp Kutusu İkonu */
+.trash-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: #f8f8f8;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trash-icon:hover i {
+    color: #ab47bc;
+}
+
+#clearAllButton {
+    display: inline-block; 
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #ff4d4d; 
+    color: white;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+#clearAllButton:hover {
+    background-color: #ff1a1a;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    input[type="text"], button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    li {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    li button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+#deletedTasksList li {
+    text-align: left;
+    display: flex; 
+    justify-content: flex-start;
+    align-items: center;
+}
+/* Çöp kutusu simgesinin konumu ve stili */
+.trash-icon {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    font-size: 24px; 
+    color: #333;
+    cursor: pointer; 
+}
+
+/* Çöp kutusu simgesi ve sayısının bulunduğu konteyner */
+.trash-icon-container {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    display: flex;
+    align-items: center;
+}
+
+/* Çöp kutusu simgesi */
+.trash-icon-container .fa-trash {
+    font-size: 24px; 
+    color: #333; 
+    margin-right: 10px; 
+    cursor: pointer; 
+}
+
+/* Sayı kutusu */
+.trash-count {
+    background-color: red; 
+    color: white; 
+    border-radius: 50%; 
+    padding: 3px 6px; 
+    font-size: 12px; 
+    font-weight: bold; 
+}
